@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HelloServlet
  */
-@WebServlet("/HelloServlet")
+@WebServlet("/helloCookie")
 public class HelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -27,36 +27,37 @@ public class HelloServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
-		request.getSession().setAttribute("password", "Moj veoma tajni password");
-		if (request.getParameter("username")!=null) {
-			username = request.getParameter("username");
-			Cookie cookie = new Cookie("mojprvicookie", username);
+		String password = request.getParameter("password");
+		String lastVisitedPage = null;
+		
+		if ((username!=null && password!=null)&&(username.compareTo("danijela")==0) && (password.compareTo("123456")==0)) {
+			lastVisitedPage="/pages/home.jsp";
+			request.getSession().setAttribute("last", lastVisitedPage);
+			Cookie cookie = new Cookie("lastVisitedPage", lastVisitedPage);
 			cookie.setMaxAge(60); //60s je validan cookie
 			response.addCookie(cookie);		
 		}else {
 	       Cookie [] cookies = request.getCookies();
 	       if (cookies != null) {
 	        for (Cookie c : cookies) {
-	    	      if (c.getName().equalsIgnoreCase("mojprvicookie")) {
-	    		   username = c.getValue();
+	    	      if (c.getName().equalsIgnoreCase("lastVisitedPage")) {
+	    	    	  lastVisitedPage = c.getValue();
 	    		   break;
 	    	       }
 	         }
 	       }
 		}
-	
+	    if(lastVisitedPage !=null) {
+	    	request.getRequestDispatcher(lastVisitedPage).forward(request, response);
+	    }else {
+	    	
 		PrintWriter out = response.getWriter();
 		out.append("<html>");
 		out.append("<body>");
-		out.append("<h3>Ovo je primer stranice koju je generisao Servlet </h3>");
-		out.append("Hello ");
-		out.append(username);
-		out.append("Moj password");
-		out.append(request.getSession().getAttribute("password").toString());
-		out.append("<br>");
+		out.append("<h3>Došlo je do greške. Pogrešno korisničko ime ili lozinka</h3>");
 		out.append("</body>");
 		out.append("</html>");
-		
+	    }
 	}
 
 	/**

@@ -48,7 +48,7 @@ public class UserServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+      request.setCharacterEncoding("UTF-8");
 	  User u = new User();
 	  u.setName(request.getParameter("name"));
 	  u.setUsername(request.getParameter("username"));

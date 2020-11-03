@@ -42,7 +42,7 @@
         <a class="nav-link" href="#">Projekti</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8080/TaskManagementServlet/UserServlet">Radnici</a>
+        <a class="nav-link" href="/TaskManagementServlet/UserServlet">Radnici</a>
       </li>
  </c:if>
     </ul>
