@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-<session-config>
-     <session-timeout>30</session-timeout>
-     <cookie-config>
-          <name>testid</name>
-         <domain>example.org</domain>
-         <path>/shop</path>
-         <http-only>true</http-only>
-         <secure>false</secure>
-         <max-age>1800</max-age>
-      </cookie-config>
-      <tracking-mode>COOKIE</tracking-mode>
-</session-config>
 
- 
+<filter-mapping>
+<filter-name>ipAddressFilter</filter-name>
+<url-pattern>/*</url-pattern>
+</filter-mapping>
+ <filter-mapping>
+<filter-name>loginFilter</filter-name>
+<url-pattern>/pages/*</url-pattern>
+<url-pattern>/UserServlet/*</url-pattern>
+</filter-mapping>
  <welcome-file-list>
   <welcome-file>/login.jsp</welcome-file>
  </welcome-file-list>

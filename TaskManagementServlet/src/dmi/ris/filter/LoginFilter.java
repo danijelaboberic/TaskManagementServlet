@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter(urlPatterns = { "/pages/*","/UserServlet/*"})
+@WebFilter(filterName="loginFilter",urlPatterns = { "/pages/*","/UserServlet/*"})
 public class LoginFilter implements Filter {
 	
 	@Override

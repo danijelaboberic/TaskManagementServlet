@@ -16,8 +16,8 @@ public class SessionListenerLoginCounter implements HttpSessionListener, HttpSes
     
 	@Override
 	public void attributeAdded(HttpSessionBindingEvent se) {
-		User u=(User)se.getValue(); 
-		System.out.println("logovao se korisnik " +u.getName()); 
+		//User u=(User)se.getValue(); 
+		//System.out.println("logovao se korisnik " +u.getName()); 
 	}
 
 	@Override
@@ -33,17 +33,17 @@ public class SessionListenerLoginCounter implements HttpSessionListener, HttpSes
 
 	@Override
 	public void sessionCreated(HttpSessionEvent se) {
-		total++;  
+		/*total++;  
 	    current++; 
 	    ctx=se.getSession().getServletContext();  
 	    ctx.setAttribute("totalusers", total);  
-	    ctx.setAttribute("currentusers", current);  
+	    ctx.setAttribute("currentusers", current);  */
 	}
 
 	@Override
 	public void sessionDestroyed(HttpSessionEvent se) {
 		 current--;  
-	     ctx.setAttribute("currentusers",current);  
+	     //ctx.setAttribute("currentusers",current);  
 	}
 
 }
