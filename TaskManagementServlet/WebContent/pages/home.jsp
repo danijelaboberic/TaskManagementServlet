@@ -5,17 +5,15 @@
 <html>
 <head>
 
-
-
 <meta charset="UTF-8">
 <title>Razvoj informacionih sistema - predavanja</title>
 </head>
 <body>
 	<%@include file="header.jsp"%>
 	<div class="container">
-		Dobrodošli ${logedUser.name}
-		<p>Trenutno je ulogovano ${currentusers} korisnika, a ukupno je
-			bilo ${totalusers}</p>
+	
+		<h3 class="mt-5">Dobrodošli ${logedUser.name}</h3>
+		
 	</div>
 </body>
 </html>

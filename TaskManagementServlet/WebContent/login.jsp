@@ -9,38 +9,33 @@
 <body>
 	<%@include file="/pages/header.jsp"%>
 	<div class="container">
-		<c:if test="${not empty loginFailed}">
-			<b>Username i password nisu tačni, pokušajte ponovo.</b>
-		</c:if>
-
-		<div id="modalLoginForm" tabindex="-1" role="dialog"
-			aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<form
-						action="http://localhost:8080/TaskManagementServlet/LoginServlet?action=login"
-						method="post">
-						<div class="modal-body mx-3">
-							<div class="md-form mb-5">
-								<i class="fas fa-envelope prefix grey-text"></i> <input
-									type="text" name="username"> <label>Korisničko
-									ime</label>
-							</div>
-
-							<div class="md-form mb-4">
-								<i class="fas fa-lock prefix grey-text"></i> <input
-									type="password" name="password"> <label>Lozinka</label>
-							</div>
-
-						</div>
-						<div class="modal-footer d-flex justify-content-center">
-							<button class="btn btn-default">Prijavi se</button>
-
-						</div>
-					</form>
-				</div>
+		<div class="row pt-5">
+			<div class="col">
+				<c:if test="${not empty loginFailed}">
+					<strong class="text-danger">Username i password nisu tačni, pokušajte ponovo.</strong>
+				</c:if>
 			</div>
+
+		</div>
+		<div class="row pt-5">
+			<div class="col-4"></div>
+			<div class="col-4">
+				<form class="text-center border border-light p-5" method="post"
+					action="http://localhost:8080/TaskManagementServlet/LoginServlet?action=login">
+
+
+					<input type="text" id="username" name="username"
+						class="form-control mb-4" placeholder="Korisničko ime"> <input
+						type="password" name="password" id="defaultLoginFormPassword"
+						class="form-control mb-4" placeholder="Lozinka">
+					<button class="btn btn-default btn-block my-4" type="submit">Prijavi
+						se</button>
+				</form>
+
+			</div>
+			<div class="col-4"></div>
 		</div>
 	</div>
+
 </body>
 </html>

@@ -4,9 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <script src="/TaskManagementServlet/js/jquery-3.4.1.min.js"></script>
-    <script src="/TaskManagementServlet/js/bootstrap.min.js"></script> 
-   <script src="/TaskManagementServlet/js/mdb.min.js"></script> 
+
 <meta charset="UTF-8">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
@@ -18,6 +16,7 @@
   <link href="/TaskManagementServlet/css/style.css" rel="stylesheet">
 <title>Projekat iz razvoja informacionih sistema</title>
 </head>
+<body>
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark default-color">
 
@@ -64,6 +63,14 @@
 
 </nav> 
 
-<!-- MODAL -->
 
+  <!-- jQuery -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  </body>
 </html>
