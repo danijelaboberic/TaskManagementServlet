@@ -22,9 +22,12 @@
 				<version>3.2.1</version>
 				<configuration>
 					<warSourceDirectory>WebContent</warSourceDirectory>
+					<warName>TaskManagementServlet</warName>
 				</configuration>
 			</plugin>
 		</plugins>
+		        <finalName>${project.name}</finalName>
+
 	</build>
 	<dependencies>
 		<dependency>
